@@ -36,12 +36,17 @@ body {
 	position: relative;
 	height: 100%;
 	overflow: hidden;
+	font-family: Georgia, serif;
+	line-height: 1.2em;
 }
 #sidebar .list-group-item {
 	border-radius: 0;
 	border-left: 0;
 	border-right: 0;
 	border-top: 0;
+}
+a.list-group-item {
+	padding-top: 20px;
 }
 @media (max-width: 992px) {
 	body {
@@ -224,4 +229,7 @@ a.dropdown-toggle:hover b {
 	padding-left: 12px;
 	color: #fff;
 	font-size: 12px;
+}
+.story-space {
+	margin-top:82px;
 }
