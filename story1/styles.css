@@ -1,0 +1,36 @@
+
+.h1 {
+	color: black;
+	margin: 35px;
+	font-family: Muli;
+}
+.h2 {
+	color: black;
+	margin: 35px 0px 20px 0px;
+	font-family: Muli;
+	font-size: 26px;
+	text-align:center;
+}
+
+.h3 {
+	color: black;
+	margin: 0px 0px 20px 0px;
+	font-family: Muli;
+	font-size: 15px;
+	text-align:center;
+}
+
+.text {
+	padding: 0px 200px;
+	font-family: Muli;
+}
+
+.container {
+	margin-bottom: 30px;
+}
+
+
+.chart {
+	padding-left: 20px;
+}
+
