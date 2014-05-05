@@ -2,22 +2,23 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<!--Adding jquery script first.-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
-		<!--Adding bootstrap script before everything.-->
+		<!--SCRIPTS-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text-javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="scripts.js"></script>
+		<script type="text/javascript" src="story1/scripts.js"></script>
+
+		<!--STYLES-->
 		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<!--Adding javascript bootstrap.-->
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<!--Adding javascript scripts second. You must load jquery first.-->
-		<script src="scripts.js" type="text/javascript"></script>
-		<!--Adding css style sheet-->
-		<link href="styles.css" rel="stylesheet">
-		<!--Adding google font-->
-		<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="styles.css">
+		
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Birds and Planes - Draft</title>
 	</head>
 	<body>
+
+		<!--Header-->
 		<div id="header" class="navbar navbar-default navbar-fixed-top">
 			<div class="navbar-header">
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,11 +31,12 @@
 					<li>
 						<a href="#"></a>
 					</li>
-					<!--Insert the search here-->
 				</ul>
+
+				<!--Right header-->
 				<ul class="nav navbar-nav pull-right">
 					<li>
-					<a href="#" class="dropdown-toggle"><span class="glyphicon glyphicon-search"></span></a>
+						<a href="#" class="dropdown-toggle"><span class="glyphicon glyphicon-search"></span></a>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span><b class="caret"></b></a>
@@ -57,11 +59,20 @@
 						</ul>
 					</li>
 				</ul>
+				<div id="reading">
+					Now reading
+					<div class="top-news">
+						TOP NEWS
+					</div>
+				</div>
 			</nav>
 		</div>
+
+		<!--Body-->
 		<div id="wrapper">
-			<div id="now-reading">Now reading <div class="top-news">TOP NEWS</div></div>
-			<div id="sidebar-wrapper" class="col-md-1">
+
+			<!--Side bar-->
+			<div id="sidebar-wrapper" class="col-md-2">
 				<div id="sidebar">
 					<ul class="nav list-group">
 						<li>
@@ -82,52 +93,35 @@
 					</ul>
 				</div>
 			</div>
-			<div id="main-wrapper" class="col-md-11 pull-right">
+
+			<!--Content-->
+			<div id="main-wrapper" class="col-md-10">
 				<div id="main">
-					<div class="page-header">
-						<h3>Admin</h3>
+					<div class="post-title">
+						It's a bird, it's a plane, it's... a huge problem
 					</div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.
+					<div class="byline">
+						By Benedetta Riva, Annie Waldman, Winni Zhou, and Harry Stevens
+					</div>
+					<div class="feature-image">
+						<img src="images/story1_header.jpg" />
+						<div class="black-band">A plane hits a bird nearly once per day at Port Authority airports. <span class="image-credit">Flickr/<a href="https://www.flickr.com/photos/taylar/7016874581/sizes/o/in/photostream/">ingridtaylar</a></span></div>
+						
+							
+					</div>
+					<div class="text">
+						<p>
+							A flock of seagulls crashed into the nose of a Jetblue airplane on March 28, forcing the plane to make an emergency landing at John F. Kennedy Airport, just 25 minutes after its takeoff. News of this strike sparked memories among New Yorkers of the infamous “Miracle on the Hudson”, the story of US Airways Flight 1549 that landed in the New York river in January 2009. Shortly after takeoff, a flock of Canadian geese flew into the engines of the Airbus 320, fatally disabling the plane’s ability to fly, however saved by ingenuity of the pilots as it crash landed in the river.
+						</p>
+						<p>
+							Splashy headlines may have made the bird strike seem rare, but similar occurrences are common. When you’re sitting on the plane waiting for take-off, bird strikes may not be your first concern, but airports across the U.S. are investing millions each year into “wildlife management programs” to prevent another miracle on the Hudson.
+						</p>
 
-						Nulla tincidunt augue vel dolor convallis lobortis. Nunc nibh dolor, tincidunt elementum lorem id, porta imperdiet neque. Quisque egestas lacus nec magna mattis aliquam. Nunc eget orci odio. Quisque neque odio, lobortis a orci ut, tempus feugiat tortor. Quisque et tincidunt arcu. Sed vel accumsan risus. Quisque enim ipsum, luctus vitae ultrices at, vulputate eu lorem. Curabitur at nibh sagittis, lobortis odio nec, sodales velit. Aenean interdum, magna nec molestie congue, magna nisi sodales dolor, at mattis ipsum nisi at nibh. Aenean quis dictum lacus. Vivamus commodo sit amet nibh eget scelerisque. Duis consequat fringilla mollis. Sed eros risus, sodales in porttitor bibendum, vulputate ut est.
-
-						Mauris in ullamcorper sapien. Morbi imperdiet consequat luctus. Donec vestibulum dapibus libero elementum posuere. Quisque posuere ipsum turpis, nec porttitor eros lobortis vel. Proin porttitor consequat adipiscing. Proin posuere orci odio, in pellentesque elit dapibus eu. Sed aliquam mollis hendrerit. Sed quis sapien nisl. Duis a bibendum tortor, nec malesuada justo. Sed luctus lorem nec velit consequat, vel ultricies lorem pulvinar. Mauris leo sapien, fermentum vel eleifend at, cursus quis massa. Ut sit amet venenatis orci, a dictum elit. Praesent a feugiat risus, non venenatis urna. Curabitur nisi sapien, facilisis vitae scelerisque nec, lacinia vel ante. Fusce tristique justo vitae mi lacinia, non interdum erat ultrices. Proin nec tempus odio, suscipit consequat lacus.
-
-						Cras aliquet tempus libero, quis mattis ipsum. Nam justo odio, mollis at bibendum in, condimentum nec mi. Ut auctor consectetur erat, eget bibendum erat tristique ac. Nullam nisl sapien, pretium at enim nec, tincidunt molestie lacus. Mauris venenatis augue velit, eu malesuada velit faucibus id. Suspendisse ac suscipit magna. Integer elit risus, rutrum a mi vitae, pharetra tristique mi. Ut semper euismod lacus vel dignissim. Maecenas quis erat eget dui vehicula aliquam.
-
-						Praesent sed dolor euismod, condimentum ante quis, molestie orci. Ut vel venenatis nunc, ut porta lacus. Donec ligula felis, tristique ut sollicitudin eget, commodo vel augue. Maecenas quis enim ac elit bibendum tristique. Suspendisse a vestibulum dui. Donec molestie enim vel ornare fermentum. Etiam suscipit, velit et dapibus dapibus, metus tellus convallis nulla, sit amet pharetra magna nunc id mauris. In eget nunc eleifend, aliquet urna sed, viverra ipsum. Quisque fringilla non eros vitae sollicitudin. Pellentesque non nisl est. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.
-
-						Nulla tincidunt augue vel dolor convallis lobortis. Nunc nibh dolor, tincidunt elementum lorem id, porta imperdiet neque. Quisque egestas lacus nec magna mattis aliquam. Nunc eget orci odio. Quisque neque odio, lobortis a orci ut, tempus feugiat tortor. Quisque et tincidunt arcu. Sed vel accumsan risus. Quisque enim ipsum, luctus vitae ultrices at, vulputate eu lorem. Curabitur at nibh sagittis, lobortis odio nec, sodales velit. Aenean interdum, magna nec molestie congue, magna nisi sodales dolor, at mattis ipsum nisi at nibh. Aenean quis dictum lacus. Vivamus commodo sit amet nibh eget scelerisque. Duis consequat fringilla mollis. Sed eros risus, sodales in porttitor bibendum, vulputate ut est.
-
-						Mauris in ullamcorper sapien. Morbi imperdiet consequat luctus. Donec vestibulum dapibus libero elementum posuere. Quisque posuere ipsum turpis, nec porttitor eros lobortis vel. Proin porttitor consequat adipiscing. Proin posuere orci odio, in pellentesque elit dapibus eu. Sed aliquam mollis hendrerit. Sed quis sapien nisl. Duis a bibendum tortor, nec malesuada justo. Sed luctus lorem nec velit consequat, vel ultricies lorem pulvinar. Mauris leo sapien, fermentum vel eleifend at, cursus quis massa. Ut sit amet venenatis orci, a dictum elit. Praesent a feugiat risus, non venenatis urna. Curabitur nisi sapien, facilisis vitae scelerisque nec, lacinia vel ante. Fusce tristique justo vitae mi lacinia, non interdum erat ultrices. Proin nec tempus odio, suscipit consequat lacus.
-
-						Cras aliquet tempus libero, quis mattis ipsum. Nam justo odio, mollis at bibendum in, condimentum nec mi. Ut auctor consectetur erat, eget bibendum erat tristique ac. Nullam nisl sapien, pretium at enim nec, tincidunt molestie lacus. Mauris venenatis augue velit, eu malesuada velit faucibus id. Suspendisse ac suscipit magna. Integer elit risus, rutrum a mi vitae, pharetra tristique mi. Ut semper euismod lacus vel dignissim. Maecenas quis erat eget dui vehicula aliquam.
-
-						Praesent sed dolor euismod, condimentum ante quis, molestie orci. Ut vel venenatis nunc, ut porta lacus. Donec ligula felis, tristique ut sollicitudin eget, commodo vel augue. Maecenas quis enim ac elit bibendum tristique. Suspendisse a vestibulum dui. Donec molestie enim vel ornare fermentum. Etiam suscipit, velit et dapibus dapibus, metus tellus convallis nulla, sit amet pharetra magna nunc id mauris. In eget nunc eleifend, aliquet urna sed, viverra ipsum. Quisque fringilla non eros vitae sollicitudin. Pellentesque non nisl est. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget magna et ante suscipit lacinia. Aenean porttitor velit id pretium blandit. Aenean ut sodales ante. Ut faucibus ornare venenatis. Duis sit amet arcu eros. Mauris volutpat vestibulum congue. Nam volutpat, urna eu varius dapibus, velit nisl bibendum lorem, sit amet dapibus sem dolor eu felis.
-
-						Nulla tincidunt augue vel dolor convallis lobortis. Nunc nibh dolor, tincidunt elementum lorem id, porta imperdiet neque. Quisque egestas lacus nec magna mattis aliquam. Nunc eget orci odio. Quisque neque odio, lobortis a orci ut, tempus feugiat tortor. Quisque et tincidunt arcu. Sed vel accumsan risus. Quisque enim ipsum, luctus vitae ultrices at, vulputate eu lorem. Curabitur at nibh sagittis, lobortis odio nec, sodales velit. Aenean interdum, magna nec molestie congue, magna nisi sodales dolor, at mattis ipsum nisi at nibh. Aenean quis dictum lacus. Vivamus commodo sit amet nibh eget scelerisque. Duis consequat fringilla mollis. Sed eros risus, sodales in porttitor bibendum, vulputate ut est.
-
-						Mauris in ullamcorper sapien. Morbi imperdiet consequat luctus. Donec vestibulum dapibus libero elementum posuere. Quisque posuere ipsum turpis, nec porttitor eros lobortis vel. Proin porttitor consequat adipiscing. Proin posuere orci odio, in pellentesque elit dapibus eu. Sed aliquam mollis hendrerit. Sed quis sapien nisl. Duis a bibendum tortor, nec malesuada justo. Sed luctus lorem nec velit consequat, vel ultricies lorem pulvinar. Mauris leo sapien, fermentum vel eleifend at, cursus quis massa. Ut sit amet venenatis orci, a dictum elit. Praesent a feugiat risus, non venenatis urna. Curabitur nisi sapien, facilisis vitae scelerisque nec, lacinia vel ante. Fusce tristique justo vitae mi lacinia, non interdum erat ultrices. Proin nec tempus odio, suscipit consequat lacus.
-
-						Cras aliquet tempus libero, quis mattis ipsum. Nam justo odio, mollis at bibendum in, condimentum nec mi. Ut auctor consectetur erat, eget bibendum erat tristique ac. Nullam nisl sapien, pretium at enim nec, tincidunt molestie lacus. Mauris venenatis augue velit, eu malesuada velit faucibus id. Suspendisse ac suscipit magna. Integer elit risus, rutrum a mi vitae, pharetra tristique mi. Ut semper euismod lacus vel dignissim. Maecenas quis erat eget dui vehicula aliquam.
-
-						Praesent sed dolor euismod, condimentum ante quis, molestie orci. Ut vel venenatis nunc, ut porta lacus. Donec ligula felis, tristique ut sollicitudin eget, commodo vel augue. Maecenas quis enim ac elit bibendum tristique. Suspendisse a vestibulum dui. Donec molestie enim vel ornare fermentum. Etiam suscipit, velit et dapibus dapibus, metus tellus convallis nulla, sit amet pharetra magna nunc id mauris. In eget nunc eleifend, aliquet urna sed, viverra ipsum. Quisque fringilla non eros vitae sollicitudin. Pellentesque non nisl est. Suspendisse potenti.
-					</p>
-				</div>
-
-				<div class="col-md-12 footer">
-					<ul class="nav navbar-nav">
-						<li>
-							<a href="">Link</a>
-						</li>
-						<li>
-							<a href="">Link</a>
-						</li>
-						<li>
-							<a href="">Link</a>
-						</li>
-					</ul>
+						<p>
+							In New York City’s metropolitan area, bird strikes occur nearly once a day (0.9 times) on average. Across the nation’s 19,000 airports, avian strikes happen nearly 30 times a day on average. With New York’s three primary airports located near large wildlife reserves and wetlands, planes are at a high risk of migratory birds, such as those that struck US Airways Flight 1549.
+						</p>
+						<div id="ChartDiv1" style="width: 900px; height: 500px;"></div>
+					</div>
 				</div>
 
 			</div>
