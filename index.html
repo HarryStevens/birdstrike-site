@@ -5,6 +5,7 @@
 		<!--SCRIPTS-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 		<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="scripts.js"></script>
@@ -75,7 +76,10 @@
 				<div id="sidebar">
 					<ul class="nav list-group">
 						<li>
-							<a class="list-group-item" href="index.html"><i class="icon-home icon-1x"></i>It's a bird, it's a plane, it's... a problem</a>
+							<a class="list-group-item" href="index.html"><i class="icon-home icon-1x"></i>
+							<div class="nav-head">
+								It's a bird, it's a plane
+							</div>Bird strikes at New York area airports on the rise </a>
 						</li>
 						<li>
 							<a class="list-group-item" href="#story2"><i class="icon-home icon-1x"></i>The hapless birds</a>
@@ -84,7 +88,7 @@
 							<a class="list-group-item" href="#story3"><i class="icon-home icon-1x"></i>Some headline about birds</a>
 						</li>
 						<li>
-							<a class="list-group-item" href="#story4"><i class="icon-home icon-1x"></i>What are the odds your plane will hit a bird?</a>
+							<a class="list-group-item" href="#story4"><i class="icon-home icon-1x"></i>What are the chances your next flight will hit a bird?</a>
 						</li>
 					</ul>
 				</div>
@@ -95,8 +99,11 @@
 				<div id="main">
 
 					<!--Story 1-->
-					<div class="post-title">
+					<div class="post-head">
 						It's a bird, it's a plane, it's... a problem
+					</div>
+					<div class="post-title">
+						Bird strikes at New York area airports on the rise
 					</div>
 					<div class="byline">
 						By <a href="https://twitter.com/benny_riva">Benedetta Riva</a>, <a href="https://twitter.com/AnnieWaldman">Annie Waldman</a>, <a href="https://twitter.com/winnnni">Winni Zhou</a> and <a href="https://twitter.com/harry_stevens">Harry Stevens</a>
@@ -284,14 +291,7 @@
 								//Time to load data with get function. This will tell my page to go and get this data set and use the function
 								//dataLoaded to render it.
 								$.getJSON("data/merge_strikes_freq.json", dataLoaded);
-
-							}
-
-							function googleLoaded2() {
-								//Time to load data with get function. This will tell my page to go and get this data set and use the function
-								//dataLoaded to render it.
 								$.getJSON("data/birdstrikes_flights_PA.json", dataLoaded2);
-
 							}
 
 							//Adding my new function pageLoaded and console logging to make sure that the pageLoaded function activates on
@@ -306,7 +306,6 @@
 								});
 								google.load("visualization", "1", {
 									packages : ["corechart"],
-									callback : "googleLoaded2"
 								});
 							}
 
@@ -325,12 +324,15 @@
 						<p>
 							The Federal Aviation Administration and U.S. Department of Agriculture are taking measures to ensure the safety of passengers. The FAA has invested in <a href="http://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.information/documentNumber/150_5220-25">avian radar systems</a> to detect and track birds around airports. Additionally, the USDA employs “wildlife biologists” to find more efficient ways to manage airport environments, even if that means killing birds and small mammals. Despite these precautions, the frequency of bird strikes has risen in recent years.
 						</p>
-						<p>At the six airports owned by the Port Authority of New York and New Jersey &ndash; John F. Kennedy, LaGuardia, Newark Liberty, Teterboro, Atlantic City and Stewart &ndash; bird strikes have increased since 1990. Even taking into account the increase in the number of flights, the birdstrike rate has jumped notably.
-						<div class="chart-title">
-							Birdstrikes per 100,000 Air Movements* at All Port Authority Airports, 1990-2013
-						</div>
-						<div id="ChartDiv2" class="viz"></div>
-						<p class="chart-note">*Air movements include both takeoffs and landings.</p>
+						<p>
+							At the six airports owned by the Port Authority of New York and New Jersey &ndash; John F. Kennedy, LaGuardia, Newark Liberty, Teterboro, Atlantic City and Stewart &ndash; bird strikes have increased since 1990. Even taking into account the increase in the number of flights, the birdstrike rate has jumped notably.
+							<div class="chart-title">
+								Birdstrikes per 100,000 Air Movements* at All Port Authority Airports, 1990-2013
+							</div>
+							<div id="ChartDiv2" class="viz"></div>
+						<p class="chart-note">
+							*Air movements include both takeoffs and landings.
+						</p>
 						<p>
 							Michael Begier, national coordinator of the airport wildlife hazards program at the USDA, said that although the number of damage-causing bird strikes has decreased during the past two decades, the number of reported bird strikes has gone up. According to FAA data, the number of strikes reported annually in New York City increased 337% between 1990 and 2013 (this figure takes into account the growth in air traffic between these years).
 						</p>
@@ -386,6 +388,680 @@
 							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
 					</div><!--End text-->
+					<!--End story2-->
+
+					<!--Story 4-->
+					<a name="story4"></a>
+					<div class="story-space">
+						&nbsp;
+					</div>
+					<div class="post-title">
+						What are the chances your next flight will hit a bird?
+					</div>
+					<div class="byline">
+						By <a href="https://twitter.com/benny_riva">Benedetta Riva</a>, <a href="https://twitter.com/AnnieWaldman">Annie Waldman</a>, <a href="https://twitter.com/winnnni">Winni Zhou</a> and <a href="https://twitter.com/harry_stevens">Harry Stevens</a>
+					</div>
+					<div class="feature-image">
+						<img src="images/story2_header.jpg" />
+						<div class="black-band">
+							Bird strike rates vary greatly at airports across the country. <span class="image-credit">Flickr/<a href="https://www.flickr.com/photos/69214385@N04/9274411015/" target="_blank">Don McCullough</a></span>
+						</div>
+
+					</div>
+					<div class="text">
+						<script>
+							//Global variables
+							var map;
+							var layer_0;
+
+							//This function is called when map stuff is loaded
+							function initializeMap() {
+
+								//For case where map is mobile. Taken straight from Google Fusion tables publish tab.
+								var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+								if (isMobile) {
+									var viewport = document.querySelector("meta[name=viewport]");
+									viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
+								}
+
+								//Styles the div map-canvas where the map will display
+								var mapDiv = document.getElementById('map-canvas');
+								mapDiv.style.width = isMobile ? '100%' : '800px';
+								mapDiv.style.height = isMobile ? '100%' : '500px';
+
+								//Updates global var map with info about the div style and additional options for zoom and lat long center
+								map = new google.maps.Map(mapDiv, {
+									center : new google.maps.LatLng(36.58072594811134, -95.03431384999999),
+									zoom : 4,
+									streetViewControl : false,
+									panControl : false,
+									mapTypeControl : false
+								});
+
+								//Styles map to reduce saturation and remove unnecessary elements
+								var style = [{
+									featureType : 'landscape',
+									elementType : 'all',
+									stylers : [{
+										saturation : -90
+									}]
+								}, {
+									featureType : 'landscape.natural',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}, {
+									featureType : 'water',
+									elementType : 'all',
+									stylers : [{
+										saturation : -30
+									}]
+								}, {
+									featureType : 'road.highway',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}, {
+									featureType : 'road.arterial',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}, {
+									featureType : 'road.local',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}, {
+									featureType : 'administrative.neighborhood',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}, {
+									featureType : 'administrative.land_parcel',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}, {
+									featureType : 'poi',
+									elementType : 'all',
+									stylers : [{
+										visibility : 'off'
+									}]
+								}];
+								var styledMapType = new google.maps.StyledMapType(style, {
+									map : map,
+									name : 'Styled Map'
+								});
+								map.mapTypes.set('map-style', styledMapType);
+								map.setMapTypeId('map-style');
+
+								//Creates functionality for updating map based on user inputs. The var whereClause will update the query string to pull certain data from the Fusion Tables
+								layer_0 = new google.maps.FusionTablesLayer({
+									query : {
+										select : "col10",
+										from : "1SopmxcZt8wuGlLJF4vHXg3deZ-mgu5djQBetwJBu"
+									},
+									map : map,
+									styleId : 3,
+									templateId : 4
+								});
+							}
+
+							//Updates map based on level selection
+							function changeMap_level() {
+								var whereClause;
+								var searchString = $("#search-string_level").val();
+								if (searchString != '--Select--') {
+									whereClause = "'Birdstrike_Rating' = '" + searchString + "'";
+								}
+								layer_0.setOptions({
+									query : {
+										select : "col10",
+										from : "1SopmxcZt8wuGlLJF4vHXg3deZ-mgu5djQBetwJBu",
+										where : whereClause
+									},
+								});
+							}
+
+							//Updates map based on state selection
+							function changeMap_state() {
+								var whereClause;
+								var stateName;
+								var stateLocs;
+								var stateLat;
+								var stateLng;
+								var stateZoom;
+								var searchString = $("#search-string_state").val();
+								if (searchString != '--Select--') {
+									whereClause = "'State' = '" + searchString + "'";
+									stateName = $("#search-string_state option:selected").text();
+
+									//JSON for state locations
+									stateLocs = {
+										"Alaska" : {
+											"lat" : 62.17267192672637,
+											"lng" : -150.22962635,
+											"zoom" : 5
+										},
+										"Arizona" : {
+											"lat" : 34.05315398991166,
+											"lng" : -112.09058826406249,
+											"zoom" : 6
+										},
+										"California" : {
+											"lat" : 35.61313610437187,
+											"lng" : -117.60023181874999,
+											"zoom" : 5
+										},
+										"Colorado" : {
+											"lat" : 39.040983266931924,
+											"lng" : -105.27357166249999,
+											"zoom" : 6
+										},
+										"District of Columbia" : {
+											"lat" : 38.78774020556518,
+											"lng" : -77.17329090078124,
+											"zoom" : 9
+										},
+										"Florida" : {
+											"lat" : 28.08583517704441,
+											"lng" : -81.41401355703124,
+											"zoom" : 6
+										},
+										"Georgia" : {
+											"lat" : 32.85125125266963,
+											"lng" : -82.85322254140624,
+											"zoom" : 7
+										},
+										"Hawaii" : {
+											"lat" : 20.5549254702272,
+											"lng" : -155.53876941640624,
+											"zoom" : 7
+										},
+										"Illinois" : {
+											"lat" : 39.17205679668551,
+											"lng" : -87.93989246328124,
+											"zoom" : 6
+										},
+										"Kansas" : {
+											"lat" : 38.25051301331366,
+											"lng" : -98.43183582265624,
+											"zoom" : 7
+										},
+										"Maryland" : {
+											"lat" : 38.650592020360776,
+											"lng" : -75.89887683828124,
+											"zoom" : 7
+										},
+										"Massachusetts" : {
+											"lat" : 42.34173144078288,
+											"lng" : -72.59199207265624,
+											"zoom" : 7
+										},
+										"Michigan" : {
+											"lat" : 43.452355299228486,
+											"lng" : -83.96284168203124,
+											"zoom" : 6
+										},
+										"Minnesota" : {
+											"lat" : 46.118403357943215,
+											"lng" : -93.96040027578124,
+											"zoom" : 6
+										},
+										"Missouri" : {
+											"lat" : 38.08640214682979,
+											"lng" : -91.69721668203124,
+											"zoom" : 6
+										},
+										"Nevada" : {
+											"lat" : 37.48296048342987,
+											"lng" : -116.49335926015624,
+											"zoom" : 6
+										},
+										"New Jersey" : {
+											"lat" : 40.409768023835944,
+											"lng" : -74.51136463124999,
+											"zoom" : 7
+										},
+										"New York" : {
+											"lat" : 42.004850785754485,
+											"lng" : -74.77827136953124,
+											"zoom" : 7
+										},
+										"North Carolina" : {
+											"lat" : 35.45276653557984,
+											"lng" : -78.84458606679686,
+											"zoom" : 7
+										},
+										"Ohio" : {
+											"lat" : 39.952842887936825,
+											"lng" : -82.39317005117186,
+											"zoom" : 7
+										},
+										"Oregon" : {
+											"lat" : 44.891813597856725,
+											"lng" : -121.65830676992186,
+											"zoom" : 6
+										},
+										"Pennsylvania" : {
+											"lat" : 39.826398881350656,
+											"lng" : -76.18589466054686,
+											"zoom" : 7
+										},
+										"Tennessee" : {
+											"lat" : 35.336340313027286,
+											"lng" : -87.15025012929686,
+											"zoom" : 7
+										},
+										"Texas" : {
+											"lat" : 31.85940404545869,
+											"lng" : -99.38489978749999,
+											"zoom" : 6
+										},
+										"Utah" : {
+											"lat" : 39.16513624755324,
+											"lng" : -112.06724231679686,
+											"zoom" : 6
+										},
+										"Virginia" : {
+											"lat" : 38.226243588641914,
+											"lng" : -78.37217395742186,
+											"zoom" : 7
+										},
+										"Washington" : {
+											"lat" : 46.98862284606915,
+											"lng" : -120.71348255117186,
+											"zoom" : 7
+										},
+										"Puerto Rico" : {
+											"lat" : 18.05765729533466,
+											"lng" : -66.26936023671874,
+											"zoom" : 8
+										},
+										"Indiana" : {
+											"lat" : 39.97336800566942,
+											"lng" : -84.27595203359374,
+											"zoom" : 6
+										},
+										"New Mexico" : {
+											"lat" : 34.09187058036035,
+											"lng" : -106.572431240625,
+											"zoom" : 6
+										},
+										"Kentucky" : {
+											"lat" : 37.877530991928026,
+											"lng" : -82.67716756874998,
+											"zoom" : 6
+										},
+										"Wisconsin" : {
+											"lat" : 43.96363233036241,
+											"lng" : -449.92265096718745,
+											"zoom" : 6
+										},
+										"Louisiana" : {
+											"lat" : 31.290838716080735,
+											"lng" : -452.14188924843745,
+											"zoom" : 7
+										},
+										"Oklahoma" : {
+											"lat" : 35.364942386676354,
+											"lng" : -98.56889120156247,
+											"zoom" : 7
+										},
+										"South Carolina" : {
+											"lat" : 33.92794439297983,
+											"lng" : -81.11710897499998,
+											"zoom" : 7
+										},
+										"Idaho" : {
+											"lat" : 45.33908637180679,
+											"lng" : -115.40543905312494,
+											"zoom" : 6
+										},
+										"Arkansas" : {
+											"lat" : 34.626959175201485,
+											"lng" : -91.77934042031247,
+											"zoom" : 7
+										},
+										"South Dakota" : {
+											"lat" : 44.30269212491957,
+											"lng" : -99.46427694374997,
+											"zoom" : 7
+										},
+										"North Dakota" : {
+											"lat" : 47.363450749792214,
+											"lng" : -100,
+											"zoom" : 7
+										},
+										"Montana" : {
+											"lat" : 46.930075175878436,
+											"lng" : -110.25285116249997,
+											"zoom" : 6
+										},
+										"Wyoming" : {
+											"lat" : 43.111480467980975,
+											"lng" : -107.18217245156247,
+											"zoom" : 6
+										},
+										"Nebraska" : {
+											"lat" : 41.346371258019644,
+											"lng" : -99.24455038124997,
+											"zoom" : 6
+										},
+										"Iowa" : {
+											"lat" : 42.084434278086945,
+											"lng" : -93.31742635781247,
+											"zoom" : 7
+										},
+										"Alabama" : {
+											"lat" : 32.900886359248034,
+											"lng" : -86.36857381874998,
+											"zoom" : 7
+										},
+										"Mississippi" : {
+											"lat" : 31.88043818384802,
+											"lng" : -89.31290975624998,
+											"zoom" : 7
+										},
+										"Vermont" : {
+											"lat" : 43.76164261693037,
+											"lng" : -72.78123251015619,
+											"zoom" : 7
+										},
+										"New Hampshire" : {
+											"lat" : 43.27567570696476,
+											"lng" : -71.0453926664062,
+											"zoom" : 7
+										},
+										"Maine" : {
+											"lat" : 45.242474137822235,
+											"lng" : -68.51853719765619,
+											"zoom" : 6
+										}
+									};
+
+									stateLat = stateLocs[stateName].lat;
+									stateLng = stateLocs[stateName].lng;
+									stateZoom = stateLocs[stateName].zoom;
+
+								} else {
+									stateLat = 36.58072594811134;
+									stateLng = -95.03431384999999;
+									stateZoom = 4;
+								}
+
+								layer_0.setOptions({
+									query : {
+										select : "col10",
+										from : "1SopmxcZt8wuGlLJF4vHXg3deZ-mgu5djQBetwJBu",
+										where : whereClause
+									}
+								});
+								layer_0.map.setCenter(new google.maps.LatLng(stateLat, stateLng));
+								layer_0.map.setZoom(stateZoom);
+							}
+
+							//Updates map based on service area selection
+							function changeMap_area() {
+								var whereClause;
+								var areaName;
+								var areaLocs;
+								var areaLat;
+								var areaLng;
+								var areaZoom;
+								var searchString = $("#search-string_area").val();
+								if (searchString != '--Select--') {
+									whereClause = "'Service Area' = '" + searchString + "'";
+									areaName = $("#search-string_area option:selected").text();
+
+									//JSON for area locations
+									areaLocs = {
+										"Eastern" : {
+											"lat" : 37.90187792229758,
+											"lng" : -70.65977161367186,
+											"zoom" : 5
+										},
+										"Central" : {
+											"lat" : 39.00310778756596,
+											"lng" : -92.19297473867186,
+											"zoom" : 5
+										},
+										"Western" : {
+											"lat" : 40.77319393665586,
+											"lng" : -116.36289661367186,
+											"zoom" : 5
+										}
+									};
+									areaLat = areaLocs[areaName].lat;
+									areaLng = areaLocs[areaName].lng;
+									areaZoom = areaLocs[areaName].zoom;
+								} else {
+									areaLat = 36.58072594811134;
+									areaLng = -95.03431384999999;
+									areaZoom = 4;
+								}
+								layer_0.setOptions({
+									query : {
+										select : "col10",
+										from : "1SopmxcZt8wuGlLJF4vHXg3deZ-mgu5djQBetwJBu",
+										where : whereClause
+									}
+								});
+								layer_0.map.setCenter(new google.maps.LatLng(areaLat, areaLng));
+								layer_0.map.setZoom(areaZoom);
+							}
+
+							/*
+							//Updates map based on region selection
+							function changeMap_region() {
+							var whereClause;
+							var searchString = document.getElementById('search-string_region').value.replace(/'/g, "\\'");
+							if (searchString != '--Select--') {
+							whereClause = "'Region' = '" + searchString + "'";
+							}
+							layer_0.setOptions({
+							query : {
+							select : "col10",
+							from : "1SopmxcZt8wuGlLJF4vHXg3deZ-mgu5djQBetwJBu",
+							where : whereClause
+							}
+							});
+							}
+							*/
+
+							/*
+							//Updates map based on city selection
+							function changeMap_city() {
+							var whereClause;
+							var searchString = document.getElementById('search-string_city').value.replace(/'/g, "\\'");
+							if (searchString != '--Select--') {
+							whereClause = "'City' = '" + searchString + "'";
+							}
+							layer_0.setOptions({
+							query : {
+							select : "col10",
+							from : "1SopmxcZt8wuGlLJF4vHXg3deZ-mgu5djQBetwJBu",
+							where : whereClause
+							}
+							});
+							}
+							*/
+
+							//This is similar to document ready (though not identical) and does not use jQuery
+							google.maps.event.addDomListener(window, 'load', initializeMap);
+						</script>
+						<p>
+							As air traffic has risen across the United States, so, too, have the frequency of bird strikes. But reported bird strike rates vary dramatically from airport to airport. At some airports, bird strikes are as common as a street pigeon. Elsewhere, they’re as rare as rare as a scaly-sided merganser.
+						</p>
+						<p>
+							A combination of factors determines the frequency with which planes hit birds. Because the Federal Aviation Administration does not require airports to report bird strikes, some tend to be more or less conscientious about reporting than others.
+						</p>
+						<p>
+							“The frequency of bird strikes may be higher at some specific airports such as JFK because these airports emphasize on strike reporting,” said Cody Baciuska, the vice president and co-founder at <a href="http://www.loomacres.com/">Loomacres Wildlife Management</a>. “The wildlife hazard mitigation program at these airports are taking active roles. The total number of bird strikes is increasing, but the damaging rate is decreasing.”
+						</p>
+						<p>
+							In other cases, airports are located in the path of avian migratory routes or next to popular nesting grounds, increasing the odds of a bird strike.
+						</p>
+						<p>
+							The below map shows 85 of the country’s most trafficked passenger airports (military airports and flight schools tend to have much lower bird strike rates), color-coded according to their “bird strike rate,” defined as the number of bird strikes per 100,000 air movements (takeoffs and landings). The data is from the FAA for the year 2012.
+						</p>
+
+						<div class="chart-title">
+							Birdstrike Rates at Airports Across the U.S., 2012
+						</div>
+
+						<div id="map-nav">
+
+							<!--Legend-->
+							<div id="legend-nav" class="nav-box">
+								<div class="map-nav-title">
+									Birdstrike Rate
+									<div class="map-nav-subtitle">
+										(Strikes/100k flights)
+									</div>
+								</div>
+								<div class="map-legend-item">
+									<img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAiklEQVR42mNgQIAoIF4NxGegdCCSHAMzEC+NUlH5v9rF5f+ZoCAwHaig8B8oPhOmKC1NU/P//7Q0DByrqgpSGAtSdOCAry9WRXt9fECK9oIUPXwYFYVV0e2ICJCi20SbFAuyG5uiECUlkKIQmOPng3y30d0d7Lt1bm4w301jQAOgcNoIDad1yOEEAFm9fSv/VqtJAAAAAElFTkSuQmCC" />
+									Very High (50 - 133)
+								</div>
+								<div class="map-legend-item">
+									<img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAi0lEQVR42mNgQIAoIF4NxGegdCCSHAMzEC+NijL7v3p1+v8zZ6rAdGCg4X+g+EyYorS0NNv////PxMCxsRYghbEgRQcOHCjGqmjv3kKQor0gRQ8fPmzHquj27WaQottEmxQLshubopAQI5CiEJjj54N8t3FjFth369ZlwHw3jQENgMJpIzSc1iGHEwB8p5qDBbsHtAAAAABJRU5ErkJggg=="/>
+									High (40 - 50)
+								</div>
+								<div class="map-legend-item">
+									<img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAiElEQVR42mNgQIAoIF4NxGegdCCSHAMzEC81izL7n746/X/VmSowbRho+B8oPhOmKM02zfb/TCzQItYCpDAWpOhA8YFirIoK9xaCFO0FKXrY/rAdq6Lm280gRbeJNikWZDc2RUYhRiBFITDHzwf5LmtjFth3GesyYL6bxoAGQOG0ERpO65DDCQDX7ovT++K9KQAAAABJRU5ErkJggg=="/>
+									Medium (20 - 40)
+								</div>
+								<div class="map-legend-item">
+									<img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAiklEQVR42mNgQIAoIF4NxGegdCCSHAMzEC81M4v6n56++n9V1RkwbWgY+B8oPhOmKM3WNu3/zJn/MbCFRSxIYSxI0YHi4gNYFRUW7gUp2gtS9LC9/SFWRc3Nt0GKbhNtUizIbmyKjIxCQIpCYI6fD/JdVtZGsO8yMtbBfDeNAQ2AwmkjNJzWIYcTAMk+i9OhipcQAAAAAElFTkSuQmCC"/>
+									Low (10 - 20)
+								</div>
+								<div class="map-legend-item">
+									<img class="googft-dot-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAi0lEQVR42mNgQIAoIF4NxGegdCCSHAMzEC+NMov6vzp99f8zVWfAdKBh4H+g+EyYorQ027T//2f+x8CxFrEghbEgRQcOFB/Aqmhv4V6Qor0gRQ8ftj/Equh2822QottEmxQLshubohCjEJCiEJjj54N8tzFrI9h36zLWwXw3jQENgMJpIzSc1iGHEwBt95qDejjnKAAAAABJRU5ErkJggg=="/>
+									Very Low (0 - 10)
+								</div>
+								&nbsp;
+							</div><!--End legend-->
+
+							<div id="controls-nav" class="nav-box">
+								<div class="map-nav-title">
+									Filter
+								</div>
+								<div class="map-controls-item">
+									<label class="label-text"> Service Area:
+										<select id="search-string_area" onchange="changeMap_area(this.value);">
+											<option value="--Select--">--All--</option>
+											<option value="Central">Central</option>
+											<option value="Eastern">Eastern</option>
+											<option value="Western">Western</option>
+										</select> </label>
+								</div>
+								<div class="map-controls-item">
+									<label> State:
+										<select id="search-string_state" onchange="changeMap_state(this.value);">
+											<option value="--Select--">--All--</option>
+											<option value="Alabama">Alabama</option>
+											<option value="Alaska">Alaska</option>
+											<option value="Arizona">Arizona</option>
+											<option value="Arkansas">Arkansas</option>
+											<option value="California">California</option>
+											<option value="Colorado">Colorado</option>
+											<option value="District of Columbia">District of Columbia</option>
+											<option value="Florida">Florida</option>
+											<option value="Georgia">Georgia</option>
+											<option value="Hawaii">Hawaii</option>
+											<option value="Idaho">Idaho</option>
+											<option value="Illinois">Illinois</option>
+											<option value="Indiana">Indiana</option>
+											<option value="Iowa">Iowa</option>
+											<option value="Kansas">Kansas</option>
+											<option value="Kentucky">Kentucky</option>
+											<option value="Louisiana">Louisiana</option>
+											<option value="Maine">Maine</option>
+											<option value="Maryland">Maryland</option>
+											<option value="Massachusetts">Massachusetts</option>
+											<option value="Michigan">Michigan</option>
+											<option value="Minnesota">Minnesota</option>
+											<option value="Mississippi">Mississippi</option>
+											<option value="Missouri">Missouri</option>
+											<option value="Montana">Montana</option>
+											<option value="Nebraska">Nebraska</option>
+											<option value="Nevada">Nevada</option>
+											<option value="New Hampshire">New Hampshire</option>
+											<option value="New Jersey">New Jersey</option>
+											<option value="New Mexico">New Mexico</option>
+											<option value="New York">New York</option>
+											<option value="North Carolina">North Carolina</option>
+											<option value="North Dakota">North Dakota</option>
+											<option value="Ohio">Ohio</option>
+											<option value="Oklahoma">Oklahoma</option>
+											<option value="Oregon">Oregon</option>
+											<option value="Pennsylvania">Pennsylvania</option>
+											<option value="Puerto Rico">Puerto Rico</option>
+											<option value="South Carolina">South Carolina</option>
+											<option value="South Dakota">South Dakota</option>
+											<option value="Tennessee">Tennessee</option>
+											<option value="Texas">Texas</option>
+											<option value="Utah">Utah</option>
+											<option value="Virginia">Virginia</option>
+											<option value="Washington">Washington</option>
+											<option value="Wisconsin">Wisconsin</option>
+											<option value="Wyoming">Wyoming</option>
+										</select> </label>
+								</div>
+								<div class="map-controls-item">
+									<label>Birdstrike Rate:
+										<select id="search-string_level" onchange="changeMap_level(this.value);">
+											<option value="--Select--">--All--</option>
+											<option value="Very High">Very High</option>
+											<option value="High">High</option>
+											<option value="Medium">Medium</option>
+											<option value="Low">Low</option>
+											<option value="Very Low">Very Low</option>
+										</select> </label>
+								</div>
+							</div>
+						</div><!--End nav-->
+
+						<div id="map-canvas">
+
+						</div>
+
+						<p>
+							<a href="http://en.wikipedia.org/wiki/Sacramento_International_Airport">Sacramento International Airport</a> in California had the highest bird strike rate in 2012. With a total of 153 reported bird strikes and 115,829 movements, the airport recorded a chart-topping 132.1 strikes for every 100,000 flights. Airport officials stress that they report bird strikes far more diligently than the average airport, which partially accounts for the higher frequency.
+						</p>
+						<p>
+							Furthermore, three full-time wildlife biologists work to make the airport’s land less attractive to birds by cutting grass, removing standing water and scaring birds away. “We’re doing everything we can to minimize the attractiveness in the most important phases of flights, which are landing and takeoffs,” said Glen Rickleton, an environment planning manager at the Sacramento County department of airports.
+						</p>
+						<p>
+							But as with so many things, when it comes to bird strikes, what matters above all is location, location, location. Sacramento International is nestled in the northern pocket of California’s central valley, one of the country’s <a href="http://www.nytimes.com/2012/10/14/magazine/californias-central-valley-land-of-a-billion-vegetables.html?hp">most productive agricultural regions</a>. The Sacramento area is home to thousands of acres of rice fields that, when flooded, provide an ideal habitat for the dozens of species of waterfowl that migrate through the region.
+						</p>
+						<p>
+							“That’s not typical for a lot of airports. We get a lot of migratory waterfowl coming through, and not just flying through, but also landing and using the land around the airport,” said Julie Car, an environmental planner and wildlife biologist for the Sacramento Country department of airports. “We know this, and this is something we’re working on during the winter. It’s one of the times of year we know they’re coming through.”
+						</p>
+						<p>
+							Rickleton has spoken with the California Rice Commission about ways to make surrounding farms less attractive to birds, including irrigating rice fields bit by bit rather than flooding the whole field at once. But it’s been an uphill battle.
+						</p>
+						<p>
+							“We don’t have the authority to tell a farmer that’s been doing this for however many decades, to tell them to do it differently. It’s a sensitive issue when you start talking about that sort of thing, but we do our best” he said. Ultimately, he added, “we don’t get into telling farmers how to farm.”
+						</p>
+						<p>
+							Though bird strikes have <a href="http://sacramento.cbslocal.com/2013/01/25/bird-strike-forces-emergency-landing-at-sacramento-international-airport/">caused emergency landings at the airport</a>, Sacramento International has been spared the severely damaging accidents like the 2009 strike that forced a U.S. Airways plane to make <a href="http://www.nydailynews.com/news/year-anniversary-hudson-river-plane-crash-gallery-1.1579817">an emergency landing on the Hudson River</a>. “We have never had anything catastrophic like that or anything close to that,” Rickleton said. “That’s a really important distinction to make.”
+						</p>
+						<p>
+							Indeed, Richard Dolbeer, a science advisor at U.S. Department of Agriculture, said bird strike rates in general are less of a concern as the number of strikes that result in damage. “Bird strikes per se are not a risk, but bird strikes with large or flocking species that cause damage or a negative effect on flight are a risk,” he said.
+						</p>
+						<p>
+							According to an FAA report, only two percent of the reported bird strikes during the past two decades caused substantial damage, and less than one percent destroyed the aircrafts. Sometimes, pilots may not even realize they hit a bird. “These strikes include ‘carcass found’ strikes where airport operations find carcasses or remains of birds on airport runways that are suspected to have been hit by aircraft but no strike was actually reported,” Dolbeer said.
+						</p>
+					</div><!--End text-->
+					<!--End story4-->
 
 				</div><!--End id main-->
 

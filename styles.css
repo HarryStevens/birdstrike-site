@@ -115,6 +115,14 @@ a.list-group-item {
 	background: #000;
 	/*min-height: 44px;*/
 }
+.nav-head {
+	color: #056ca5;
+	text-transform: uppercase;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 11px;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
 .navbar-fixed-top {
 	border-width: 0;
 }
@@ -184,6 +192,14 @@ a.dropdown-toggle:hover b {
 }
 
 /*POSTS*/
+.post-head {
+	margin-top: 20px;
+	margin-left: 18%;
+	color: #056ca5;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
 .post-title {
 	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
 	font-size: 36px;
@@ -191,7 +207,6 @@ a.dropdown-toggle:hover b {
 	width: 65%;
 	font-weight: bold;
 	line-height: 40px;
-	margin-top: 20px;
 	margin-bottom: 30px;
 }
 .chart-title {
@@ -255,4 +270,46 @@ a.dropdown-toggle:hover b {
 	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
 	font-size: 14px;
 	font-style: italic;
+}
+
+/*MAP*/
+#map-canvas {
+	margin-bottom: 20px;
+}
+#map-nav {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	margin-top: 4px;
+	margin-left: 8px;
+}
+#controls-nav {
+	margin-bottom: 35px;
+}
+#legend-nav {
+	margin-bottom: 4px;	
+}
+.map-nav-title {
+	font-weight: bold;
+}
+.map-nav-subtitle {
+	display: inline;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 15px;
+}
+.map-legend-item {
+	float: left;
+	font-size: 13px;
+	padding-right: 10px;
+}
+.map-controls-item {
+	float: left;
+	font-size: 13px;
+	padding-right: 10px;
+}
+label {
+	font-weight: normal;
+}
+.googft-info-window {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.6em;
 }
