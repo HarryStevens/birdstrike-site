@@ -253,7 +253,10 @@ a.dropdown-toggle:hover b {
 	font-size: 12px;
 }
 .story-space {
-	margin-top:82px;
+	margin-top:44px;
+}
+.no-head-space {
+	margin-top: 10px;
 }
 
 /*VISUALIZATIONS*/
