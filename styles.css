@@ -48,29 +48,6 @@ body {
 a.list-group-item {
 	background: #fafafa;
 }
-@media (max-width: 992px) {
-	body {
-		padding-top: 0px;
-	}
-}
-@media (min-width: 992px) {
-	#main-wrapper {
-		float: right;
-	}
-}
-@media (max-width: 992px) {
-	#main-wrapper {
-		padding-top: 0px;
-	}
-}
-@media (max-width: 992px) {
-	#sidebar-wrapper {
-		position: static;
-		height: auto;
-		max-height: 300px;
-		border-right: 0;
-	}
-}
 .footer {
 	background-color: #ffffff;
 	bottom: 0;
@@ -81,12 +58,58 @@ a.list-group-item {
 	width: 100px;
 }
 
+/*RESPONSIVE*/
+@media (min-width: 992px) {
+	#main-wrapper {
+		float: right;
+	}
+}
+@media (max-width: 992px) {
+	body {
+		padding-top: 0px;
+	}
+	#sidebar-wrapper {
+		position: static;
+		height: auto;
+		max-height: 300px;
+		border-right: 0;
+	}
+	#main-wrapper {
+		padding-top: 0px;
+	}
+}
+@media (max-width: 767px) {
+	#reading {
+		display: none;
+	}
+}
+@media (max-width: 767px) {
+	#map-canvas {
+		width: 500px;
+	}
+}
+@media (min-width: 767px) {
+	#map-canvas {
+		width: 100%;
+	}
+}
+@media (max-width: 480px) {
+	#map-viz {
+		display: none;
+	}
+}
+@media (min-width: 480px) {
+	#no-map {
+		display: none;
+	}
+}
+
 /*NAVBAR HEADER*/
 #header a:hover {
-	color:#fff;
+	color: #fff;
 }
 #reading {
-	background: #393939; 
+	background: #393939;
 	color: #fff;
 	height: 32px;
 	margin-top: 48px;
@@ -145,7 +168,7 @@ a.list-group-item {
 	font-size: 13px;
 	width: 203px;
 }
-.dropdown-menu li{
+.dropdown-menu li {
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
@@ -153,7 +176,6 @@ a.list-group-item {
 	padding: 0;
 	margin: 0;
 	background-color: #8c8c8c;
-
 }
 .dropdown-menu.pull-right li.divider:hover {
 	padding: 0;
@@ -164,16 +186,16 @@ a.list-group-item {
 	background-color: #168DD9;
 	cursor: pointer;
 }
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
 	background-color: #000;
 }
 .navbar-right-item {
 	border-left: 1px solid #8c8c8c;
-	height:48px;
+	height: 48px;
 	padding-left: 2px;
 	padding-right: 2px;
 }
-a.dropdown-toggle:hover .glyphicon{
+a.dropdown-toggle:hover .glyphicon {
 	color: #168DD9;
 }
 a.dropdown-toggle:hover b {
@@ -201,7 +223,7 @@ a.dropdown-toggle:hover b {
 	font-weight: bold;
 }
 .post-title {
-	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-size: 36px;
 	margin-left: 18%;
 	width: 65%;
@@ -210,7 +232,7 @@ a.dropdown-toggle:hover b {
 	margin-bottom: 30px;
 }
 .chart-title {
-	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-size: 24px;
 	font-weight: bold;
 }
@@ -253,7 +275,7 @@ a.dropdown-toggle:hover b {
 	font-size: 12px;
 }
 .story-space {
-	margin-top:44px;
+	margin-top: 44px;
 }
 .no-head-space {
 	margin-top: 10px;
@@ -261,7 +283,7 @@ a.dropdown-toggle:hover b {
 
 /*VISUALIZATIONS*/
 .viz {
-	width: 120%; 
+	width: 120%;
 	height: 500px;
 	margin-left: -60px;
 }
@@ -270,7 +292,7 @@ a.dropdown-toggle:hover b {
 	width: 110%;
 }
 .chart-note {
-	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-style: italic;
 }
@@ -280,7 +302,7 @@ a.dropdown-toggle:hover b {
 	margin-bottom: 20px;
 }
 #map-nav {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-top: 4px;
 	margin-left: 8px;
 }
@@ -288,7 +310,19 @@ a.dropdown-toggle:hover b {
 	margin-bottom: 35px;
 }
 #legend-nav {
-	margin-bottom: 4px;	
+	margin-bottom: 4px;
+}
+#no-map {
+	border: 1px solid gray;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-family: sans-serif;
+	font-style: italic;
+	color: gray;
+}
+#no-map p {
+	margin-top: 10px;
 }
 .map-nav-title {
 	font-weight: bold;
