@@ -5,6 +5,7 @@
 		<!--SCRIPTS-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 		<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="scripts.js"></script>
 
@@ -111,8 +112,6 @@
 						<script>
 							function dataLoaded(BIRDSTRIKES) {
 
-								console.log(BIRDSTRIKES);
-								console.log("First viz has loaded");
 								//Create a loop that is a short cut straight to what we want to chart. First
 								//start by creating a variable. We want to work with results (and from that, we want to plot count.)
 								var myBirdstrikesData = BIRDSTRIKES.results;
@@ -122,7 +121,7 @@
 
 								//Add the headers of the dataArray so that I know what I am working with. In the case of Birdstrikes, I am working with
 								//Data and Number of Birdstrikes
-								var headerBirdstrikesArray = ["Date", "Number at JFK", "Number at Teterboro", "Number at LGA", "Number at Newark", "Number at Atlantic City", "Number at Stewart"];
+								var headerBirdstrikesArray = ["Date", "John F. Kennedy", "Teterboro", "LaGuardia", "Newark Liberty", "Atlantic City", "Stewart"];
 
 								//Push the headers to myDataArray. So now the first "row" so to speak will be the headers Date and Number of Birdstrikes
 								myBirdstrikesArray.push(headerBirdstrikesArray);
@@ -138,22 +137,50 @@
 									//You want to get whats in the observations based on its INDEX. Created reference to current object in list.
 									var currObj = myBirdstrikesData[i];
 
+									//Formatting date with moment js
+									var currDate = currObj.date;
+									var momentDate = moment(currDate);
+									var newDate = momentDate._d;
+
 									//Now create an array IN an array by taking each value from month and count and pushing to the array shell
-									var currArray = [currObj.date, currObj.JFK_freq, currObj.Teterboro_freq, currObj.LGA_freq, currObj.Newark_freq, currObj.KACY_freq, currObj.Stewart_freq];
+									var currArray = [newDate, currObj.JFK_freq, currObj.Teterboro_freq, currObj.LGA_freq, currObj.Newark_freq, currObj.KACY_freq, currObj.Stewart_freq];
 
 									//Pushing to the array shell above so that you're making into the larger array.
 									myBirdstrikesArray.push(currArray);
 								}
-								//Just checing to see if myDataArray works!
-								console.log(myBirdstrikesArray);
 
 								//Now I feed data to visualization library. Whoot almost there!
 								var data = google.visualization.arrayToDataTable(myBirdstrikesArray);
 
+								var formatDate = new google.visualization.DateFormat({
+									pattern : 'y'
+								});
+								formatDate.format(data, 0);
+
 								//Create options object to add fanciness to the chart, like a title.
 								var chartOptions = {
-									title : "Number of Birdstrikes Date to Date",
-									colors: ['#794379', 'orange', '#5883b8', 'green', '#ff43f3', 'red']
+									title : "Select a date range to zoom in. Right click to zoom out.",
+									vAxis : {
+										ticks : [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650],
+										title : 'Birdstrikes',
+										gridlines : {
+											color : '#fff'
+										}
+									},
+									hAxis : {
+										ticks : [new Date(1990, 1, 1), new Date(1992, 1, 1), new Date(1994, 1, 1), new Date(1996, 1, 1), new Date(1998, 1, 1), new Date(2000, 1, 1), new Date(2002, 1, 1), new Date(2004, 1, 1), new Date(2006, 1, 1), new Date(2008, 1, 1), new Date(2010, 1, 1), new Date(2012, 1, 1)],
+										title : 'Year',
+										slantedText : true,
+										format : 'y',
+										gridlines : {
+											color : '#fff'
+										}
+									},
+									explorer : {
+										actions : ['dragToZoom', 'rightClickToReset'],
+										axis : 'horizontal'
+									},
+									colors : ['#794379', 'orange', '#5883b8', 'green', '#ff43f3', 'red'],
 								};
 
 								//Now I tell it to create a line chart and give it a div that matches the index.html, meaning I should now go back and create
@@ -166,9 +193,6 @@
 
 							function dataLoaded2(BIRDAIRPORT) {
 
-								console.log("Second viz has loaded");
-								console.log(BIRDAIRPORT);
-
 								//Create a loop that is a short cut straight to what we want to chart. First
 								//start by creating a variable. We want to work with results (and from that, we want to plot count.)
 								var myBirdAirportData = BIRDAIRPORT.results;
@@ -178,7 +202,7 @@
 
 								//Add the headers of the dataArray so that I know what I am working with. In the case of Birdstrikes, I am working with
 								//Data and Number of Birdstrikes
-								var headerBirdAirportArray = ["Year", "Birdstrikes per 100,000 Aircraft Movements"];
+								var headerBirdAirportArray = ["Year", "Birdstrike rate"];
 
 								//Push the headers to myDataArray. So now the first "row" so to speak will be the headers Date and Number of Birdstrikes
 								myBirdAirportArray.push(headerBirdAirportArray);
@@ -194,25 +218,56 @@
 									//You want to get whats in the observations based on its INDEX. Created reference to current object in list.
 									var currObj = myBirdAirportData[i];
 
+									//Moment js will format the dates
+									var momentYear = moment(currObj.Year);
+									var currYear = momentYear._d;
+
 									//Now create an array IN an array by taking each value from month and count and pushing to the array shell
-									var currArray = [currObj.Year, currObj.Birdstrikes_Flights];
+									var currArray = [currYear, currObj.Birdstrikes_Flights];
 
 									//Pushing to the array shell above so that you're making into the larger array.
 									myBirdAirportArray.push(currArray);
 								}
-								//Just checing to see if myDataArray works!
-								console.log(myBirdAirportArray);
 
 								//Now I feed data to visualization library. Whoot almost there!
 								var data2 = google.visualization.arrayToDataTable(myBirdAirportArray);
 
+								//Formats the way data is displayed on the chart
+								var formatDate = new google.visualization.DateFormat({
+									pattern : 'y'
+								});
+								formatDate.format(data2, 0);
+								var formatVal = new google.visualization.NumberFormat({
+									pattern : '##.##'
+								});
+								formatVal.format(data2, 1);
+
 								//Create options object to add fanciness to the chart, like a title.
 								var chartOptions2 = {
-									title : "Number of Birdstrikes per 100,000 Flights",
+									title : "Select a date range to zoom in. Right click to zoom out.",
 									hAxis : {
-										slantedText : true
+										ticks : [new Date(1990, 1, 1), new Date(1992, 1, 1), new Date(1994, 1, 1), new Date(1996, 1, 1), new Date(1998, 1, 1), new Date(2000, 1, 1), new Date(2002, 1, 1), new Date(2004, 1, 1), new Date(2006, 1, 1), new Date(2008, 1, 1), new Date(2010, 1, 1), new Date(2012, 1, 1)],
+										slantedText : true,
+										format : 'y',
+										title : 'Year',
+										gridlines : {
+											color : '#fff'
+										},
 									},
-									colors: ['#ff43f3'],
+									vAxis : {
+										title : 'Birdstrikes per 100k movements',
+										gridlines : {
+											color : '#fff'
+										},
+									},
+									explorer : {
+										actions : ['dragToZoom', 'rightClickToReset'],
+										axis : 'horizontal'
+									},
+									colors : ['#ff43f3'],
+									legend : {
+										position : 'none'
+									}
 								};
 
 								//Now I tell it to create a line chart and give it a div that matches the index.html, meaning I should now go back and create
@@ -226,30 +281,22 @@
 
 							//Adding the googleLoaded function. This function will go and get my data and eventually display it on the page! :-)
 							function googleLoaded() {
-								console.log("Google has loaded");
-
 								//Time to load data with get function. This will tell my page to go and get this data set and use the function
 								//dataLoaded to render it.
-								$.getJSON("story1/merge_strikes_freq.json", dataLoaded);
+								$.getJSON("data/merge_strikes_freq.json", dataLoaded);
 
 							}
 
 							function googleLoaded2() {
-								console.log("Google has loaded again");
-
 								//Time to load data with get function. This will tell my page to go and get this data set and use the function
 								//dataLoaded to render it.
-								$.getJSON("story1/birdstrikes_flights_PA.json", dataLoaded2);
+								$.getJSON("data/birdstrikes_flights_PA.json", dataLoaded2);
 
 							}
 
 							//Adding my new function pageLoaded and console logging to make sure that the pageLoaded function activates on
 							//document ready. This will eventually load my google visualization.
 							function pageLoaded() {
-
-								//console log checks to make sure that page loaded works.
-								console.log("Got to page loaded.");
-
 								//Load the google visualization library with the callback googleLoaded. This will tell the browser to load the function
 								//googleLoaded. This is using the google visualization script to work. But now I have to make sure that I have
 								//my function googleLoaded working.
@@ -264,39 +311,49 @@
 							}
 
 							//Adding my document ready to activate my pageLoaded function (which will activate the visualization).
-							$(document).ready(pageLoaded);
-
-							//Putting an end page console log just for double checking things.
-							console.log("This is the end page console log. Just for double checking things.");
+							pageLoaded();
 						</script>
 
 						<p>
 							A flock of seagulls crashed into the nose of a Jetblue airplane on March 28, forcing the plane to make an emergency landing at John F. Kennedy Airport, just 25 minutes after its takeoff. News of this strike sparked memories among New Yorkers of the infamous “Miracle on the Hudson”, the story of US Airways Flight 1549 that landed in the New York river in January 2009. Shortly after takeoff, a flock of Canadian geese flew into the engines of the Airbus 320, fatally disabling the plane’s ability to fly, however saved by ingenuity of the pilots as it crash landed in the river.
 						</p>
 						<p>
-							Splashy headlines may have made the bird strike seem rare, but similar occurrences are common. When you’re sitting on the plane waiting for take-off, bird strikes may not be your first concern, but airports across the U.S. are investing millions each year into “wildlife management programs” to prevent another miracle on the Hudson.
-						</p>
-
-						<p>
-							In New York City’s metropolitan area, bird strikes occur nearly once a day (0.9 times) on average. Across the nation’s 19,000 airports, avian strikes happen nearly 30 times a day on average. With New York’s three primary airports located near large wildlife reserves and wetlands, planes are at a high risk of migratory birds, such as those that struck US Airways Flight 1549.
-						</p>
-						<div id="ChartDiv1" class="viz"></div>
-						<p>
-							Although the number of bird strikes is small compared with the daily number of flights in the New York City region, the hidden costs of strikes are underestimated. According to the Federal Aviation Administration (FAA), wildlife strikes delay planes for about 600,000 hours annually. Additionally, the cost of delays and plane damage amounts to nearly $1 billion per year, though less than 10 percent of planes sustain damage.
+							<a href="http://www.nydailynews.com/new-york/e-plane-emergency-landing-jfk-article-1.1737787">Media coverage</a> may make such bird strikes seem rare, but similar occurrences are common. When you’re sitting on the plane waiting for take-off, bird strikes may not be your first concern, but airports across the U.S. are investing millions each year into “wildlife management programs” to prevent another miracle on the Hudson.
 						</p>
 						<p>
-							Michael Begier, national coordinator of the airport wildlife hazards program at the U.S. Department of Agriculture, said that although the number of damage-causing bird strikes has decreased during the past two decades, the number of reported bird strikes has gone up. According to FAA data, the number of strikes reported annually in New York City increased 337% between 1990 and 2013 (this figure takes into account the growth in air traffic between these years).
+							The Federal Aviation Administration and U.S. Department of Agriculture are taking measures to ensure the safety of passengers. The FAA has invested in <a href="http://www.faa.gov/airports/resources/advisory_circulars/index.cfm/go/document.information/documentNumber/150_5220-25">avian radar systems</a> to detect and track birds around airports. Additionally, the USDA employs “wildlife biologists” to find more efficient ways to manage airport environments, even if that means killing birds and small mammals. Despite these precautions, the frequency of bird strikes has risen in recent years.
+						</p>
+						<p>At the six airports owned by the Port Authority of New York and New Jersey &ndash; John F. Kennedy, LaGuardia, Newark Liberty, Teterboro, Atlantic City and Stewart &ndash; bird strikes have increased since 1990. Even taking into account the increase in the number of flights, the birdstrike rate has jumped notably.
+						<div class="chart-title">
+							Birdstrikes per 100,000 Air Movements* at All Port Authority Airports, 1990-2013
+						</div>
+						<div id="ChartDiv2" class="viz"></div>
+						<p class="chart-note">*Air movements include both takeoffs and landings.</p>
+						<p>
+							Michael Begier, national coordinator of the airport wildlife hazards program at the USDA, said that although the number of damage-causing bird strikes has decreased during the past two decades, the number of reported bird strikes has gone up. According to FAA data, the number of strikes reported annually in New York City increased 337% between 1990 and 2013 (this figure takes into account the growth in air traffic between these years).
 						</p>
 						<p>
 							According to the FAA, bird strikes are increasing for three key reasons. The populations of many large bird species have burgeoned as a result of adaptation to urban areas as well as airports. Alongside the expanding bird population, plane flights have increased in frequency as well from 310 million flights in 1980 to 725 million in 2012.
 						</p>
-						<div id="ChartDiv2" class="viz"></div>
-
 						<p>
 							Curiously, advancements in plane technology have also contributed to high bird strike rates. More recently constructed planes have two engines, instead of three or four like in the past.  This means that, “in the event of a multiple ingestion event, aircraft with two engines may have vulnerabilities not shared by their three or four engine-equipped counterparts,” claims a recent FAA report. Furthermore,“research has indicated that birds are less able to detect and avoid modern jet aircraft with quieter turbofan engines than older aircraft with noisier engines.”
 						</p>
 						<p>
-							Given the frequency of bird strikes, the FAA and USDA are taking measures to ensure the safety of passengers. The FAA has invested in avian radar systems to detect and track birds around airports. Additionally, the USDA employs “wildlife biologists” to find more efficient ways to manage airport environments, even if that means killing birds and small mammals. Despite these precautions, bird strikes remain a threat.
+							In New York City’s metropolitan area, bird strikes occur nearly once a day (0.9 times) on average. Across the nation’s 19,000 airports, avian strikes happen nearly 30 times a day on average. With New York’s three primary airports located near large wildlife reserves and wetlands, planes are at a high risk of migratory birds, such as those that struck US Airways Flight 1549.
+						</p>
+						<div class="chart-title">
+							Yearly Birdstrikes at Port Authority Airports, 1990-2013
+						</div>
+						<div id="ChartDiv1" class="viz"></div>
+						<p>
+							Birdstrikes have increased at all Port Authority airports, but John F. Kennedy's wide lead is striking. One factor that contributes to JFK's high rate is its higher volume of air traffic, but flights at JFK are perhaps further prone to birdstrikes because the airports runways are directly in front of the <a href="http://www.nyharborparks.org/visit/jaba.html">Jamaica Bay Wildlife Refuge</a>, an internationally-recognized Important Bird Area. Water fowl like gulls and geese nest in the marshlands that surround the airport, and predatory species like kestrels hunt prey over the JFK's open fields.
+						</p>
+						</p>
+						<p>
+							“This is obviously a fundamental conflict,” Tod Winston, communications manager for the New York City Audubon Society, said in an email.
+						</p>
+						<p>
+							Although the number of bird strikes is small compared with the daily number of flights in the New York City region, the hidden costs of strikes are underestimated. According to the Federal Aviation Administration (FAA), wildlife strikes delay planes for about 600,000 hours annually. Additionally, the cost of delays and plane damage amounts to nearly $1 billion per year, though less than 10 percent of planes sustain damage.
 						</p>
 					</div><!--End text-->
 					<!--End story 1-->

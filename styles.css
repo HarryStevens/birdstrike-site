@@ -194,6 +194,11 @@ a.dropdown-toggle:hover b {
 	margin-top: 20px;
 	margin-bottom: 30px;
 }
+.chart-title {
+	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+}
 .byline {
 	font-family: Georgia, serif;
 	color: #999;
@@ -240,8 +245,14 @@ a.dropdown-toggle:hover b {
 .viz {
 	width: 120%; 
 	height: 500px;
-	margin-left:-130px;
+	margin-left: -60px;
 }
 #ChartDiv1 {
-	margin-left: -120px;
+	margin-left: -60px;
+	width: 110%;
+}
+.chart-note {
+	font-family: 'AdelleSansWeb','Helvetica Neue',Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	font-style: italic;
 }
