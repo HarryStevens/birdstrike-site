@@ -367,19 +367,20 @@ a.dropdown-toggle:hover b {
 	font-style: italic;
 }
 
+
 /*STORY 3 CHARTS*/
 #myBirdKillingsChartDiv {
-
-	margin-left: -50px;
 	margin-bottom: 100px;
 }
 #myBirdMethodsChartDiv {
-	margin-left: -45px;
+	margin-left: -50px;
 }
 #ChartDiv3 {
 	margin-left: -45px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
+
+
 /*STORY 4 MAP*/
 #map-canvas {
 	margin-bottom: 20px;

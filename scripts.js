@@ -202,9 +202,6 @@ function pageLoaded() {
  */
 
 function st3_dataLoaded(BIRDKILLINGS) {
-
-	console.log(BIRDKILLINGS);
-	console.log("First viz has loaded");
 	//Create a loop that is a short cut straight to what we want to chart. First
 	//start by creating a variable. We want to work with results (and from that, we want to plot count.)
 	var myBirdKillingsData = BIRDKILLINGS.results;
@@ -229,18 +226,31 @@ function st3_dataLoaded(BIRDKILLINGS) {
 
 		//You want to get whats in the observations based on its INDEX. Created reference to current object in list.
 		var currObj = myBirdKillingsData[i];
+		
+		//Moment.js to format dates
+		var newDate = currObj.Month;
+		var momentDate = moment(newDate);
+		var currDate = momentDate._d;
 
 		//Now create an array IN an array by taking each value from month and count and pushing to the array shell
-		var currArray = [currObj.Month, currObj.EWR, currObj.JFK, currObj.LGA, currObj.SWF, currObj.TEB];
+		var currArray = [currDate, currObj.EWR, currObj.JFK, currObj.LGA, currObj.SWF, currObj.TEB];
 
 		//Pushing to the array shell above so that you're making into the larger array.
 		myBirdKillingsArray.push(currArray);
 	}
-	//Just checing to see if myDataArray works!
-	console.log(myBirdKillingsArray);
 
 	//Now I feed data to visualization library. Whoot almost there!
 	var data = google.visualization.arrayToDataTable(myBirdKillingsArray);
+	
+	//Formatting tooltips
+	var formatDate = new google.visualization.DateFormat({
+		pattern : "MMMM, y"
+	});
+	formatDate.format(data, 0);
+	var formatVal = new google.visualization.NumberFormat({
+		pattern : '#,###'
+	});
+	formatVal.format(data, 2);
 
 	//Create options object to add fanciness to the chart, like a title.
 	var chartOptions = {
@@ -248,10 +258,16 @@ function st3_dataLoaded(BIRDKILLINGS) {
 		'width' : 900,
 		vAxis : {
 			ticks : [500, 1000, 1500, 2000, 2500, 3000, 3500],
-			title: "Number of killings"
+			title: "Number of killings",
+			format: '#,###',
 		},
 		hAxis : {
-			title: "Date"
+			title: "Date",
+			slantedText : true,
+			format: 'MMM. y',
+			gridlines: {
+				color: '#fff'
+			}
 		},
 		colors : ['#542788', '#af8dc3', '#c51b7d', '#e9a3c9', '#01665e', '#4d4d4d']
 	};
@@ -265,9 +281,6 @@ function st3_dataLoaded(BIRDKILLINGS) {
 }
 
 function st3_dataLoaded2(BIRDTYPES) {
-
-	console.log("Second viz has loaded");
-	console.log(BIRDTYPES);
 
 	//Create a loop that is a short cut straight to what we want to chart. First
 	//start by creating a variable. We want to work with results (and from that, we want to plot count.)
@@ -300,8 +313,6 @@ function st3_dataLoaded2(BIRDTYPES) {
 		//Pushing to the array shell above so that you're making into the larger array.
 		myBirdTypesArray.push(currArray);
 	}
-	//Just checing to see if myDataArray works!
-	console.log(myBirdTypesArray);
 
 	//Now I feed data to visualization library. Whoot almost there!
 	var data2 = google.visualization.arrayToDataTable(myBirdTypesArray);
@@ -328,8 +339,6 @@ function st3_dataLoaded2(BIRDTYPES) {
 //Visualization 3:
 function st3_dataLoaded3(BIRDMETHODS) {
 
-	console.log(BIRDMETHODS);
-	console.log("Third viz has loaded");
 	//Create a loop that is a short cut straight to what we want to chart. First
 	//start by creating a variable. We want to work with results (and from that, we want to plot count.)
 	var myBirdMethodsData = BIRDMETHODS.results;
@@ -361,9 +370,6 @@ function st3_dataLoaded3(BIRDMETHODS) {
 		//Pushing to the array shell above so that you're making into the larger array.
 		myBirdMethodsArray.push(currArray);
 	}
-	//Just checing to see if myDataArray works!
-	console.log(myBirdMethodsArray);
-
 	//Now I feed data to visualization library. Whoot almost there!
 	var data = google.visualization.arrayToDataTable(myBirdMethodsArray);
 
@@ -388,8 +394,6 @@ function st3_dataLoaded3(BIRDMETHODS) {
 
 //Adding the st3_googleLoaded function. This function will go and get my data and eventually display it on the page! :-)
 function st3_googleLoaded() {
-	console.log("Google has loaded");
-
 	//Time to load data with get function. This will tell my page to go and get this data set and use the function
 	//dataLoaded to render it.
 	$.get("data/birdkillings_by_airport.json", st3_dataLoaded, "json");
@@ -398,8 +402,6 @@ function st3_googleLoaded() {
 }
 
 function st3_googleLoaded2() {
-	console.log("Google has loaded");
-
 	//Time to load data with get function. This will tell my page to go and get this data set and use the function
 	//dataLoaded to render it.
 	$.get("data/birdkillings_by_type_year.json", st3_dataLoaded2, "json");
@@ -409,10 +411,6 @@ function st3_googleLoaded2() {
 //Adding my new function st3_pageLoaded and console logging to make sure that the st3_pageLoaded function activates on
 //document ready. This will eventually load my google visualization.
 function st3_pageLoaded() {
-
-	//console log checks to make sure that page loaded works.
-	console.log("Got to page loaded.");
-
 	//Load the google visualization library with the callback st3_googleLoaded. This will tell the browser to load the function
 	//st3_googleLoaded. This is using the google visualization script to work. But now I have to make sure that I have
 	//my function st3_googleLoaded working.
