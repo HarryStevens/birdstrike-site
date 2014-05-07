@@ -1,0 +1,14 @@
+{
+    "results": [
+        {
+            "Year": "2012",
+            "Euthanized": 1780,
+            "Firearm": 11536
+        },
+        {
+            "Year": "2013",
+            "Euthanized": 2091,
+            "Firearm": 4962
+        }
+    ]
+}

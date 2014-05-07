@@ -1,0 +1,14 @@
+
+{
+    "results":
+[{"birdType":"Laughing gull","year2012":4217,"year2013":1519},
+{"birdType":"European Starling","year2012":1880,"year2013":1329},
+{"birdType":"Herring gull","year2012":1602,"year2013":840},
+{"birdType":"Mourning Dove","year2012":1301,"year2013":612},
+{"birdType":"Brown-headed Cowbird","year2012":629,"year2013":441},
+{"birdType":"Atlantic Brant","year2012":581,"year2013":322},
+{"birdType":"Ring-billed Gull","year2012":510,"year2013":273},
+{"birdType":"Canada Goose","year2012":492,"year2013":495},
+{"birdType":"Rock Pigeon","year2012":421,"year2013":311},
+{"birdType":"Great Black-backed gull","year2012":331,"year2013":103}]
+}
