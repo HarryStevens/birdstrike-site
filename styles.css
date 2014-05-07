@@ -120,6 +120,17 @@ a.list-group-item {
 		display: none;
 	}
 }
+@media (max-width: 480px) {
+	.bird-info {
+		display: none;
+	}
+}
+@media (max-width: 480px) {
+	.bird-photo {
+		width: 100%;
+		float: none;
+	}
+}
 
 /*NAVBAR HEADER*/
 #header a:hover {
