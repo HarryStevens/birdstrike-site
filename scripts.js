@@ -931,6 +931,27 @@ where : whereClause
 //This is similar to document ready (though not identical) and does not use jQuery
 google.maps.event.addDomListener(window, 'load', initializeMap);
 
+//Script for selecting share box
+function SelectAll(id)
+{
+	$("#share-1").on("click", function(){
+    	$("#share-1.share-input").focus();
+    	$("#share-1.share-input").select();		
+	});
+	$("#share-2").on("click", function(){
+    	$("#share-2.share-input").focus();
+    	$("#share-2.share-input").select();		
+	});
+	$("#share-3").on("click", function(){
+    	$("#share-3.share-input").focus();
+    	$("#share-3.share-input").select();		
+	});
+	$("#share-4").on("click", function(){
+    	$("#share-4.share-input").focus();
+    	$("#share-4.share-input").select();		
+	});
+}
+
 /*
  * DOCUMENT READY CALLS ALL NEEDED FUNCTIONS
  */
@@ -938,4 +959,5 @@ $(document).ready(function() {
 	//Fires first story
 	pageLoaded();
 	st3_pageLoaded();
+	SelectAll();
 });
