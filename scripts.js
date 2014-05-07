@@ -254,18 +254,26 @@ function st3_dataLoaded(BIRDKILLINGS) {
 
 	//Create options object to add fanciness to the chart, like a title.
 	var chartOptions = {
+		title : 'Select a date range to zoom in. Right click to zoom out.',
 		vAxis : {
 			ticks : [500, 1000, 1500, 2000, 2500, 3000, 3500],
 			title: "Number of killings",
 			format: '#,###',
+			gridlines: {
+				color: '#fff'
+			}
 		},
 		hAxis : {
 			title: "Date",
 			slantedText : true,
-			format: 'MMM. y',
+			format: "MMM, ''yy",
 			gridlines: {
 				color: '#fff'
 			}
+		},
+		explorer : {
+			actions : ['dragToZoom', 'rightClickToReset'],
+			axis : 'horizontal'
 		},
 		colors : ['#542788', '#af8dc3', '#c51b7d', '#e9a3c9', '#01665e', '#4d4d4d']
 	};
@@ -289,7 +297,7 @@ function st3_dataLoaded2(BIRDTYPES) {
 
 	//Add the headers of the dataArray so that I know what I am working with. In the case of Birdstrikes, I am working with
 	//Data and Number of Birdstrikes
-	var headerBirdTypesArray = ["Bird Type", "Birds Killed in 2012", "Birds Killed in 2013"];
+	var headerBirdTypesArray = ["Bird Type", "Birds killed, 2012", "Birds killed, 2013"];
 
 	//Push the headers to myDataArray. So now the first "row" so to speak will be the headers Date and Number of Birdstrikes
 	myBirdTypesArray.push(headerBirdTypesArray);
@@ -314,12 +322,22 @@ function st3_dataLoaded2(BIRDTYPES) {
 
 	//Now I feed data to visualization library. Whoot almost there!
 	var data2 = google.visualization.arrayToDataTable(myBirdTypesArray);
+	
+	//Formatting numbers as they display on chart
+	var formatVal = new google.visualization.NumberFormat({
+		pattern : '###,###'
+	});
+	formatVal.format(data2, 1);
+	formatVal.format(data2, 2);
 
 	//Create options object to add fanciness to the chart, like a title.
 	var chartOptions2 = {
 		colors : ['#505050', '#FF00FF'],
 		vAxis : {	
-			title: "Number of killings"
+			title: "Number of killings",
+			gridlines : {
+				color: '#fff'
+			}
 		},
 		hAxis : {
 			title: "Species"
@@ -346,7 +364,7 @@ function st3_dataLoaded3(BIRDMETHODS) {
 
 	//Add the headers of the dataArray so that I know what I am working with. In the case of Birdstrikes, I am working with
 	//Data and Number of Birdstrikes
-	var headerBirdMethodsArray = ["Year", "Euthanized", "Firearm"];
+	var headerBirdMethodsArray = ["Year", "Firearm", "Euthanasia"];
 
 	//Push the headers to myDataArray. So now the first "row" so to speak will be the headers Date and Number of Birdstrikes
 	myBirdMethodsArray.push(headerBirdMethodsArray);
@@ -363,7 +381,7 @@ function st3_dataLoaded3(BIRDMETHODS) {
 		var currObj = myBirdMethodsData[i];
 
 		//Now create an array IN an array by taking each value from month and count and pushing to the array shell
-		var currArray = [currObj.Year, currObj.Euthanized, currObj.Firearm];
+		var currArray = [currObj.Year, currObj.Firearm, currObj.Euthanized];
 
 		//Pushing to the array shell above so that you're making into the larger array.
 		myBirdMethodsArray.push(currArray);
@@ -375,7 +393,10 @@ function st3_dataLoaded3(BIRDMETHODS) {
 	var chartOptions = {
 		colors : ['#505050', '#FF00FF'],
 		vAxis : {	
-			title: "Number of killings"
+			title: "Number of killings",
+			gridlines : {
+				color: '#fff'
+			}
 		},
 		hAxis : {
 			title: "Year"

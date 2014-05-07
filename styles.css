@@ -298,10 +298,13 @@ a.dropdown-toggle:hover b {
 	margin-left: -60px;
 	width: 110%;
 }
-.chart-note {
+.chart-source {
 	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-style: italic;
+	text-align: right;
+	margin-top: 0px;
+	line-height: 1em;
 }
 
 /*STORY 2 CAROUSEL*/
@@ -370,7 +373,7 @@ a.dropdown-toggle:hover b {
 
 /*STORY 3 CHARTS*/
 #myBirdKillingsChartDiv {
-	margin-bottom: 100px;
+	margin-bottom: 10px;
 }
 #myBirdMethodsChartDiv {
 	margin-left: -50px;
