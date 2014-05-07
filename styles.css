@@ -314,6 +314,16 @@ a.dropdown-toggle:hover b {
 .share {
 	margin-top: 50px;
 }
+.share-this {
+	float: left;
+}
+.share-icons {
+	margin-top: -10px;
+	float: right;
+}
+.share-icons img {
+	opacity: 0.68;
+}
 .share-input {
 	color: #1697e2;
 	font-family: sans-serif;

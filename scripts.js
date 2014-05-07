@@ -226,7 +226,7 @@ function st3_dataLoaded(BIRDKILLINGS) {
 
 		//You want to get whats in the observations based on its INDEX. Created reference to current object in list.
 		var currObj = myBirdKillingsData[i];
-		
+
 		//Moment.js to format dates
 		var newDate = currObj.Month;
 		var momentDate = moment(newDate);
@@ -241,7 +241,7 @@ function st3_dataLoaded(BIRDKILLINGS) {
 
 	//Now I feed data to visualization library. Whoot almost there!
 	var data = google.visualization.arrayToDataTable(myBirdKillingsArray);
-	
+
 	//Formatting tooltips
 	var formatDate = new google.visualization.DateFormat({
 		pattern : "MMMM, y"
@@ -257,18 +257,18 @@ function st3_dataLoaded(BIRDKILLINGS) {
 		title : 'Select a date range to zoom in. Right click to zoom out.',
 		vAxis : {
 			ticks : [500, 1000, 1500, 2000, 2500, 3000, 3500],
-			title: "Number of killings",
-			format: '#,###',
-			gridlines: {
-				color: '#fff'
+			title : "Number of killings",
+			format : '#,###',
+			gridlines : {
+				color : '#fff'
 			}
 		},
 		hAxis : {
-			title: "Date",
+			title : "Date",
 			slantedText : true,
-			format: "MMM, ''yy",
-			gridlines: {
-				color: '#fff'
+			format : "MMM, ''yy",
+			gridlines : {
+				color : '#fff'
 			}
 		},
 		explorer : {
@@ -322,7 +322,7 @@ function st3_dataLoaded2(BIRDTYPES) {
 
 	//Now I feed data to visualization library. Whoot almost there!
 	var data2 = google.visualization.arrayToDataTable(myBirdTypesArray);
-	
+
 	//Formatting numbers as they display on chart
 	var formatVal = new google.visualization.NumberFormat({
 		pattern : '###,###'
@@ -333,14 +333,14 @@ function st3_dataLoaded2(BIRDTYPES) {
 	//Create options object to add fanciness to the chart, like a title.
 	var chartOptions2 = {
 		colors : ['#505050', '#FF00FF'],
-		vAxis : {	
-			title: "Number of killings",
+		vAxis : {
+			title : "Number of killings",
 			gridlines : {
-				color: '#fff'
+				color : '#fff'
 			}
 		},
 		hAxis : {
-			title: "Species"
+			title : "Species"
 		}
 	};
 
@@ -392,14 +392,14 @@ function st3_dataLoaded3(BIRDMETHODS) {
 	//Create options object to add fanciness to the chart, like a title.
 	var chartOptions = {
 		colors : ['#505050', '#FF00FF'],
-		vAxis : {	
-			title: "Number of killings",
+		vAxis : {
+			title : "Number of killings",
 			gridlines : {
-				color: '#fff'
+				color : '#fff'
 			}
 		},
 		hAxis : {
-			title: "Year"
+			title : "Year"
 		},
 	};
 
@@ -931,25 +931,28 @@ where : whereClause
 //This is similar to document ready (though not identical) and does not use jQuery
 google.maps.event.addDomListener(window, 'load', initializeMap);
 
-//Script for selecting share box
-function SelectAll(id)
-{
-	$("#share-1").on("click", function(){
-    	$("#share-1.share-input").focus();
-    	$("#share-1.share-input").select();		
-	});
-	$("#share-2").on("click", function(){
-    	$("#share-2.share-input").focus();
-    	$("#share-2.share-input").select();		
-	});
-	$("#share-3").on("click", function(){
-    	$("#share-3.share-input").focus();
-    	$("#share-3.share-input").select();		
-	});
-	$("#share-4").on("click", function(){
-    	$("#share-4.share-input").focus();
-    	$("#share-4.share-input").select();		
-	});
+//Sharing scripts
+function sharing() {
+	//Script for selecting share box
+	function SelectAll() {
+		$("#share-1").on("click", function() {
+			$("#share-1.share-input").focus();
+			$("#share-1.share-input").select();
+		});
+		$("#share-2").on("click", function() {
+			$("#share-2.share-input").focus();
+			$("#share-2.share-input").select();
+		});
+		$("#share-3").on("click", function() {
+			$("#share-3.share-input").focus();
+			$("#share-3.share-input").select();
+		});
+		$("#share-4").on("click", function() {
+			$("#share-4.share-input").focus();
+			$("#share-4.share-input").select();
+		});
+	}
+	SelectAll();
 }
 
 /*
@@ -959,5 +962,5 @@ $(document).ready(function() {
 	//Fires first story
 	pageLoaded();
 	st3_pageLoaded();
-	SelectAll();
+	sharing();
 });
