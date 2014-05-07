@@ -254,8 +254,6 @@ function st3_dataLoaded(BIRDKILLINGS) {
 
 	//Create options object to add fanciness to the chart, like a title.
 	var chartOptions = {
-		'height' : 600,
-		'width' : 900,
 		vAxis : {
 			ticks : [500, 1000, 1500, 2000, 2500, 3000, 3500],
 			title: "Number of killings",
