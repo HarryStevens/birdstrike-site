@@ -322,13 +322,18 @@ a.dropdown-toggle:hover b {
 	height: 500px;
 	margin-left: -60px;
 }
+.viz-nolegend {
+	width: 128%;
+	height: 500px;
+	margin-left: -60px;
+}
 #ChartDiv1 {
 	margin-left: -60px;
 	width: 110%;
 }
 .chart-source {
 	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	font-style: italic;
 	text-align: right;
 	margin-top: 0px;
@@ -400,6 +405,11 @@ a.dropdown-toggle:hover b {
 
 
 /*STORY 3 CHARTS*/
+.viz3 {
+	width: 110%;
+	height: 500px;
+	margin-left: -60px;
+}
 #myBirdKillingsChartDiv {
 	margin-bottom: 10px;
 }
