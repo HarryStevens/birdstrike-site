@@ -236,6 +236,13 @@ a.dropdown-toggle:hover b {
 	font-size: 24px;
 	font-weight: bold;
 }
+.chart-subtitle {
+	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	margin-bottom: 2px;
+	margin-left: 1px;
+	font-style: italic;
+}
 .byline {
 	font-family: Georgia, serif;
 	color: #999;
@@ -281,7 +288,7 @@ a.dropdown-toggle:hover b {
 	margin-top: 10px;
 }
 
-/*VISUALIZATIONS*/
+/*STORY 1 CHARTS*/
 .viz {
 	width: 120%;
 	height: 500px;
@@ -297,7 +304,69 @@ a.dropdown-toggle:hover b {
 	font-style: italic;
 }
 
-/*MAP*/
+/*STORY 2 CAROUSEL*/
+#carousel-example-generic {
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+.carousel-indicators {
+	margin-bottom: -16px;
+}
+.carousel-indicators li {
+	background: #ddd;
+}
+.carousel-indcators li.active {
+	background-color: black;
+	background: black;
+	margin: 20;
+}
+.bird-card {
+	background: #F0F0F0;
+	padding: 20px 13% 20px 13%;
+	font-family: 'AdelleSansWeb', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	height: 310px;
+}
+.bird-name {
+	font-size: 20px;
+	margin-bottom: 14px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.bird-item-number {
+	font-size: 34px;
+	color: #056ca5;
+	font-style: italic;
+	margin-right: 4px;
+}
+.bird-number {
+	margin-top: -6px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.bird-number-text {
+	color: #056ca5;
+}
+.bird-photo {
+	width: 32%;
+	float: left;
+	margin-right: 14px;
+	margin-bottom: 14px;
+}
+.bird-photo img {
+	width: 100%;
+}
+.bird-info {
+	font-size: 14px;
+	line-height: 1.5em;
+	margin-top: 10px;
+}
+.bird-image-credit {
+	font-size: 12px;
+	font-style: italic;
+}
+
+/*STORY 4 MAP*/
 #map-canvas {
 	margin-bottom: 20px;
 }

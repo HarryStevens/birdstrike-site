@@ -2,7 +2,6 @@
  * @author Annie Waldman, Harry Stevens, Benedetta Riva, Winni Zhou
  */
 
-
 /*
  * STORY 1 SCRIPT
  */
@@ -198,10 +197,9 @@ function pageLoaded() {
 	});
 }
 
-
 /*
- * STORY 4 SCRIPT
- */
+* STORY 4 SCRIPT
+*/
 //Global variables
 var map;
 var layer_0;
@@ -685,13 +683,12 @@ where : whereClause
 */
 
 //This is similar to document ready (though not identical) and does not use jQuery
-google.maps.event.addDomListener(window, 'load', initializeMap); 
-
+google.maps.event.addDomListener(window, 'load', initializeMap);
 
 /*
  * DOCUMENT READY CALLS ALL NEEDED FUNCTIONS
  */
-$(document).ready(function(){
+$(document).ready(function() {
 	//Fires first story
 	pageLoaded();
-});
+}); 
