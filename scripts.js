@@ -934,7 +934,7 @@ google.maps.event.addDomListener(window, 'load', initializeMap);
 //Sharing scripts
 function sharing() {
 	//Script for selecting share box
-	function SelectAll() {
+	function selectAll() {
 		$("#share-1").on("click", function() {
 			$("#share-1.share-input").focus();
 			$("#share-1.share-input").select();
@@ -952,7 +952,45 @@ function sharing() {
 			$("#share-4.share-input").select();
 		});
 	}
-	SelectAll();
+	
+	function showShare() {
+		$(".share-top").on("mouseover",function(){
+			$("#shareshow1").removeClass("share-hide");
+			$("#shareshow1").addClass("share-show");
+		});
+		$(".share-top").on("mouseout",function(){
+			$("#shareshow1").addClass("share-hide");
+			$("#shareshow1").removeClass("share-show");
+		});
+		$(".share-top").on("mouseover",function(){
+			$("#shareshow2").removeClass("share-hide");
+			$("#shareshow2").addClass("share-show");
+		});
+		$(".share-top").on("mouseout",function(){
+			$("#shareshow2").addClass("share-hide");
+			$("#shareshow2").removeClass("share-show");
+		});
+		$(".share-top").on("mouseover",function(){
+			$("#shareshow3").removeClass("share-hide");
+			$("#shareshow3").addClass("share-show");
+		});
+		$(".share-top").on("mouseout",function(){
+			$("#shareshow3").addClass("share-hide");
+			$("#shareshow3").removeClass("share-show");
+		});
+		$(".share-top").on("mouseover",function(){
+			$("#shareshow4").removeClass("share-hide");
+			$("#shareshow4").addClass("share-show");
+		});
+		$(".share-top").on("mouseout",function(){
+			$("#shareshow4").addClass("share-hide");
+			$("#shareshow4").removeClass("share-show");
+		});
+	}
+	
+	selectAll();
+	showShare();
+	
 }
 
 /*
